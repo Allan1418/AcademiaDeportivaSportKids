@@ -62,11 +62,11 @@ public class Usuario {
 
 
     public Usuario(String nombre, String apellidos, String usuario, String password, boolean estado) {
-        this.nombre = "";
-        this.apellidos = "";
-        this.usuario = "";
-        this.password = "";
-        this.estado = true;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.usuario = usuario;
+        this.password = password;
+        this.estado = estado;
     }
 }
     
