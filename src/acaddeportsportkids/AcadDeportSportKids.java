@@ -48,16 +48,20 @@ public class AcadDeportSportKids {
                 case 1:
                     //insetar funcion
                     String consultarUsuario = JOptionPane.showInputDialog("!Digite el usuario por consultar: ");
-                    Usuario usuarioEncontrado = almacenamiento.consultarUsuario(consultarUsuario);
-                    if (usuarioEncontrado != null) {
-                        System.out.println("Usuario encontrado: " + usuarioEncontrado.getNombre() + " " + usuarioEncontrado.getApellidos());
+                    Usuario consultado = almacenamiento.consultarUsuario(consultarUsuario);
+
+                    if (consultado != null) {
+                        JOptionPane.showMessageDialog(null,"Usuario encontrado \n"
+                                + consultado.getNombre() + " " + consultado.getApellidos() + " \n"
+                                + consultado.getUsuario(),"Usuario encontrado: ",1);
                     } else {
-                        System.out.println("Usuario no encontrado.");
+                        JOptionPane.showMessageDialog(null,"Ingrese un usuario que se haya registrado o ingrese correctamente el nombre.",
+                                "¡Usuario no encontrado!" ,0);
                     }
                     break;
                 case 2:
                     //insetar funcion
-                    break;
+                break;
                 case 3:
                     //insetar funcion
                     break;
