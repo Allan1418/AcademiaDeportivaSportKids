@@ -15,7 +15,7 @@ public class AcadDeportSportKids {
     //Metodos menu
     public static void menu(){
         AlmacenamientoUsuarios almacenamiento = new AlmacenamientoUsuarios();
-        String[] botones = {"agregar Usuario", "Consultar Usuario", "Op3", "Op4", "SALIR"};
+        String[] botones = {"agregar Usuario", "Consultar Usuario", "Inactivar un Usuario", "Op4", "SALIR"};
         int opcion;
         OUTER:
         while (true) {
@@ -53,14 +53,24 @@ public class AcadDeportSportKids {
                     if (consultado != null) {
                         JOptionPane.showMessageDialog(null,"Usuario encontrado \n"
                                 + consultado.getNombre() + " " + consultado.getApellidos() + " \n"
-                                + consultado.getUsuario(),"Usuario encontrado: ",1);
+                                + consultado.getUsuario() + "\n"+consultado.isEstado(),"Usuario encontrado: ",JOptionPane.INFORMATION_MESSAGE);
                     } else {
                         JOptionPane.showMessageDialog(null,"Ingrese un usuario que se haya registrado o ingrese correctamente el nombre.",
-                                "¡Usuario no encontrado!" ,0);
+                                "¡Usuario no encontrado!" ,JOptionPane.ERROR_MESSAGE);
                     }
                     break;
                 case 2:
                     //insetar funcion
+                    String buscarUsuario = JOptionPane.showInputDialog("!Digite el usuario que deseas inactivar: ");
+                    almacenamiento.inactivarUsuario(buscarUsuario);
+                    if (buscarUsuario != null) {
+                        JOptionPane.showMessageDialog(null,"Usuario encontrado",
+                                "El estado del usuario se cambio correctamente",JOptionPane.INFORMATION_MESSAGE);
+                    } else {
+                        JOptionPane.showMessageDialog(null,
+                                "Ingrese un usuario que se haya registrado o ingrese correctamente el nombre.",
+                                "¡Usuario no encontrado!" ,JOptionPane.ERROR_MESSAGE);
+                    }
                 break;
                 case 3:
                     //insetar funcion
