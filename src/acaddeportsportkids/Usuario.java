@@ -1,7 +1,5 @@
 
 package acaddeportsportkids;
-
-
 import java.util.ArrayList;
 
 public class Usuario {
@@ -9,14 +7,21 @@ public class Usuario {
     //Mejoras
 
     //Atributos
+    private int id;
     private String nombre;
-    private String apellidos;
+    private String apellido;
     private String usuario;
     private String password;
     private boolean estado;
-    
-    
+
+    public int getId() {
+        return id;
+    }
+
     //Metodos get y set
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;
@@ -26,12 +31,12 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setApellido(String apellidos) {
+        this.apellido = apellidos;
     }
 
     public String getUsuario() {
@@ -61,53 +66,12 @@ public class Usuario {
     //Constructores
 
 
-    public Usuario(String nombre, String apellidos, String usuario, String password, boolean estado) {
+    public Usuario(int id,String nombre, String apellido, String usuario, String password, boolean estado) {
+        this.id=id;
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.apellido = apellido;
         this.usuario = usuario;
         this.password = password;
         this.estado = estado;
     }
 }
-    
-    
-    //OtrosMetodos
-
-
-class AlmacenamientoUsuarios {
-    private ArrayList<Usuario> usuarios;
-
-    public AlmacenamientoUsuarios() {
-        usuarios = new ArrayList<>();
-    }
-
-    public void agregarUsuario(Usuario usuario) {
-        usuarios.add(usuario);
-    }
-
-    public Usuario consultarUsuario(String usuario) {
-        for (Usuario u : usuarios) {
-            if (u.getUsuario().equals(usuario)) {
-                return u;
-            }
-        }
-        return null;
-    }
-
-    public void inactivarUsuario(String usuario) {
-        Usuario usuarioEncontrado = null;
-        for (Usuario u : usuarios) {
-            if (u.getUsuario().equals(usuario)) {
-                usuarioEncontrado = u;
-                break;
-            }
-        }
-        if (usuarioEncontrado != null) {
-            // Se verifica si el usuario tiene datos en otros catalogos
-            // Realizar las acciones necesarias para inactivar al usuario
-            usuarioEncontrado.setEstado(false);
-        }
-    }
-}
-
-
