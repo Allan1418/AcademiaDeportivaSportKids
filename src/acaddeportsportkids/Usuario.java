@@ -1,25 +1,24 @@
 
 package acaddeportsportkids;
-import java.util.ArrayList;
+
 
 public class Usuario {
 
     //Mejoras
 
     //Atributos
-    private int id;
+    private String id;
     private String nombre;
-    private String apellido;
-    private String usuario;
-    private String password;
+    private String user;
+    private char[] password;
     private boolean estado;
-
-    public int getId() {
+    
+    //Metodos get y set
+    public String getId() {
         return id;
     }
 
-    //Metodos get y set
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -31,32 +30,31 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getUser() {
+        return user;
     }
 
-    public void setApellido(String apellidos) {
-        this.apellido = apellidos;
+    public void setUser(String user) {
+        this.user = user;
     }
 
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getPassword() {
+    public char[] getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(char[] password) {
         this.password = password;
     }
 
-    public boolean isEstado() {
+    public boolean getEstado() {
         return estado;
+    }
+    
+    public String getEstadoPrint() {
+        if (this.estado) {
+           return "Activo";
+        }
+        return "Inactivo";
     }
 
     public void setEstado(boolean estado) {
@@ -64,13 +62,10 @@ public class Usuario {
     }
 
     //Constructores
-
-
-    public Usuario(int id,String nombre, String apellido, String usuario, String password, boolean estado) {
+    public Usuario(String id, String nombre, String user, char[] password, boolean estado) {
         this.id=id;
         this.nombre = nombre;
-        this.apellido = apellido;
-        this.usuario = usuario;
+        this.user = user;
         this.password = password;
         this.estado = estado;
     }

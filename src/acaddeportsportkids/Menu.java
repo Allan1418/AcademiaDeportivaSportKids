@@ -25,9 +25,9 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         CreacionUsuario = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        btnAgregarUsuario = new javax.swing.JMenuItem();
+        btnConsultarUsuario = new javax.swing.JMenuItem();
+        btnSalir = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
 
@@ -42,37 +42,37 @@ public class Menu extends javax.swing.JFrame {
         CreacionUsuario.setMnemonic('C');
         CreacionUsuario.setText("Gestion de Usuarios");
 
-        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem1.setText("Creacion de Usuario");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarUsuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        btnAgregarUsuario.setText("Creacion de Usuario");
+        btnAgregarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                btnAgregarUsuarioActionPerformed(evt);
             }
         });
-        jMenuItem1.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnAgregarUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jMenuItem1KeyReleased(evt);
+                btnAgregarUsuarioKeyReleased(evt);
             }
         });
-        CreacionUsuario.add(jMenuItem1);
+        CreacionUsuario.add(btnAgregarUsuario);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem4.setText("Consultar Usuario");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        btnConsultarUsuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        btnConsultarUsuario.setText("Consultar Usuario");
+        btnConsultarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                btnConsultarUsuarioActionPerformed(evt);
             }
         });
-        CreacionUsuario.add(jMenuItem4);
+        CreacionUsuario.add(btnConsultarUsuario);
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem2.setText("Salir");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
-        CreacionUsuario.add(jMenuItem2);
+        CreacionUsuario.add(btnSalir);
 
         jMenuBar1.add(CreacionUsuario);
 
@@ -101,13 +101,13 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         int salir = JOptionPane.showConfirmDialog(null, "¿Desea salir del sistema?",
                 "Salir", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (salir == 0) {
             System.exit(0);
         }
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         int salir = JOptionPane.showConfirmDialog(null, "¿Desea salir del sistema?",
@@ -117,18 +117,19 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_formWindowClosing
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Agregar.Agregar();
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    private void btnAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarUsuarioActionPerformed
+        AgregarUsuario.arranque();
+    }//GEN-LAST:event_btnAgregarUsuarioActionPerformed
 
-    private void jMenuItem1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jMenuItem1KeyReleased
+    private void btnAgregarUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnAgregarUsuarioKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1KeyReleased
+    }//GEN-LAST:event_btnAgregarUsuarioKeyReleased
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        Consultar.Consultar();
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
-    public static void Arranque() {
+    private void btnConsultarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarUsuarioActionPerformed
+        ConsultarUsuario.arranque();
+    }//GEN-LAST:event_btnConsultarUsuarioActionPerformed
+    
+    public static void arranque() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -160,12 +161,12 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu CreacionUsuario;
+    private javax.swing.JMenuItem btnAgregarUsuario;
+    private javax.swing.JMenuItem btnConsultarUsuario;
+    private javax.swing.JMenuItem btnSalir;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     // End of variables declaration//GEN-END:variables
 
     class FondoPanel extends JPanel

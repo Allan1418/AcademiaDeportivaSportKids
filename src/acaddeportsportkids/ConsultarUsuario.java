@@ -1,19 +1,21 @@
 package acaddeportsportkids;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class Consultar extends javax.swing.JFrame {
+public class ConsultarUsuario extends javax.swing.JFrame {
 
     FondoPanel Consultar = new FondoPanel();
     
-    private String Usuario;
+    private Usuario actual = null;
+    
 
-    public Consultar() 
-    {
+    public ConsultarUsuario(){
         this.setContentPane(Consultar);
         initComponents();
         setResizable(false);
@@ -21,19 +23,33 @@ public class Consultar extends javax.swing.JFrame {
     }
 
     public void consultar() {
-        Usuario = setTxtUsuario.getText();
-        Usuario consultado = Comun.buscarClienteUsuario(Usuario);
-        if (consultado != null) {
-            JOptionPane.showMessageDialog(null, "El usuario por consultar se encuentra",
-                    "Usuario Encontrado", JOptionPane.INFORMATION_MESSAGE);
-            this.getTxtApellido.setText(consultado.getApellido());
-            this.getTxtId.setText(String.valueOf(consultado.getId()));
-            this.getTxtNombre.setText(consultado.getNombre());
-            this.getTxtEstado.setText(String.valueOf(consultado.isEstado()));
+        
+        actual = Comun.buscarUsuario(setTxtUsuario.getText());
+        if (actual != null) {
+            this.getTxtUser.setText(String.valueOf(actual.getId()));
+            this.getTxtNombre.setText(actual.getNombre());
+            this.getTxtEstado.setText(actual.getEstadoPrint());
+            btnEstado.setEnabled(true);
+            if (actual.getEstado()) {
+                btnEstado.setText("Desactivar");
+            }else{
+                btnEstado.setText("Activar");
+            }
+            
         } else {
-            JOptionPane.showMessageDialog(null, "¡No se encontró el dato buscado!",
-                    "Error", JOptionPane.ERROR_MESSAGE);
+            /*/JOptionPane.showMessageDialog(null, "¡No se encontró el dato buscado!",
+                    "Academia Deportiva Sport Kids", JOptionPane.ERROR_MESSAGE);/*/
+            
+            setTxtUsuario.setForeground(Color.red);
+            txtErrorUser.setText("Usuario NO encontrado!");
         }
+    }
+    
+    public void limpiar(){
+        getTxtNombre.setText("");
+        getTxtUser.setText("");
+        getTxtEstado.setText("");
+        btnEstado.setText("");
     }
 
     /**
@@ -48,19 +64,19 @@ public class Consultar extends javax.swing.JFrame {
         jPanel1 = new FondoPanel();
         jLabel5 = new javax.swing.JLabel();
         getTxtNombre = new javax.swing.JLabel();
-        getTxtApellido = new javax.swing.JLabel();
-        getTxtId = new javax.swing.JLabel();
+        getTxtUser = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         setTxtUsuario = new javax.swing.JTextField();
         getTxtEstado = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnConsultar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        btnEstado = new javax.swing.JButton();
+        txtErrorUser = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
@@ -73,15 +89,10 @@ public class Consultar extends javax.swing.JFrame {
         getTxtNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getTxtNombre.setOpaque(true);
 
-        getTxtApellido.setBackground(new java.awt.Color(255, 255, 255));
-        getTxtApellido.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        getTxtApellido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getTxtApellido.setOpaque(true);
-
-        getTxtId.setBackground(new java.awt.Color(255, 255, 255));
-        getTxtId.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        getTxtId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getTxtId.setOpaque(true);
+        getTxtUser.setBackground(new java.awt.Color(255, 255, 255));
+        getTxtUser.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        getTxtUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getTxtUser.setOpaque(true);
 
         jLabel1.setFont(new java.awt.Font("Segoe Script", 3, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -109,17 +120,16 @@ public class Consultar extends javax.swing.JFrame {
                 setTxtUsuarioActionPerformed(evt);
             }
         });
+        setTxtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                setTxtUsuarioKeyReleased(evt);
+            }
+        });
 
         getTxtEstado.setBackground(new java.awt.Color(255, 255, 255));
         getTxtEstado.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         getTxtEstado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         getTxtEstado.setOpaque(true);
-
-        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel4.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Apellidos");
-        jLabel4.setOpaque(true);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
@@ -127,21 +137,31 @@ public class Consultar extends javax.swing.JFrame {
         jLabel3.setText("Nombre");
         jLabel3.setOpaque(true);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/question.png"))); // NOI18N
-        jButton1.setText("Consultar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/question.png"))); // NOI18N
+        btnConsultar.setText("Consultar");
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnConsultarActionPerformed(evt);
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/remove.png"))); // NOI18N
-        jButton2.setText("SALIR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/remove.png"))); // NOI18N
+        btnSalir.setText("SALIR");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
+
+        btnEstado.setEnabled(false);
+        btnEstado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEstadoActionPerformed(evt);
+            }
+        });
+
+        txtErrorUser.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        txtErrorUser.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -152,12 +172,8 @@ public class Consultar extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel2)))
@@ -168,25 +184,26 @@ public class Consultar extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(getTxtApellido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(274, 274, 274))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(getTxtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(getTxtId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(setTxtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE))
-                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(getTxtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(getTxtUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(setTxtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(btnEstado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                                        .addComponent(getTxtEstado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(txtErrorUser, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(getTxtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnConsultar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(381, 381, 381)
+                        .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(94, 94, 94))
         );
         jPanel1Layout.setVerticalGroup(
@@ -197,28 +214,29 @@ public class Consultar extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(setTxtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(setTxtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnConsultar)
+                            .addComponent(txtErrorUser, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3))
                     .addComponent(getTxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(getTxtApellido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addGap(3, 3, 3)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(getTxtId, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(34, 34, 34)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(getTxtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(getTxtUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSalir)
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(getTxtEstado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -239,22 +257,53 @@ public class Consultar extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        this.actual = null;
+        btnEstado.setEnabled(false);
+        btnEstado.setText("");
         consultar();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnConsultarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void setTxtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setTxtUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_setTxtUsuarioActionPerformed
 
+    private void btnEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstadoActionPerformed
+        
+        actual.setEstado(!actual.getEstado());
+        getTxtEstado.setText(actual.getEstadoPrint());
+        if (actual.getEstado()) {
+                btnEstado.setText("Desactivar");
+            }else{
+                btnEstado.setText("Activar");
+            }
+        
+        
+        
+    }//GEN-LAST:event_btnEstadoActionPerformed
+
+    private void setTxtUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_setTxtUsuarioKeyReleased
+        
+        setTxtUsuario.setForeground(Color.BLACK);
+        txtErrorUser.setText("");
+        this.actual = null;
+        btnEstado.setEnabled(false);
+        limpiar();
+        
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            consultar();
+        }
+        
+    }//GEN-LAST:event_setTxtUsuarioKeyReleased
+
     /**
      * @param args the command line arguments
      */
-    public static void Consultar() {
+    public static void arranque() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -268,45 +317,45 @@ public class Consultar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Consultar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Consultar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Consultar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Consultar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ConsultarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Consultar().setVisible(true);
+                new ConsultarUsuario().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel getTxtApellido;
+    private javax.swing.JButton btnConsultar;
+    private javax.swing.JButton btnEstado;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel getTxtEstado;
-    private javax.swing.JLabel getTxtId;
     private javax.swing.JLabel getTxtNombre;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel getTxtUser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField setTxtUsuario;
+    private javax.swing.JLabel txtErrorUser;
     // End of variables declaration//GEN-END:variables
 
     
     
-    class FondoPanel extends JPanel
-    {
+    class FondoPanel extends JPanel{
         private Image imagen;
         
         @Override
