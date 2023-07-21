@@ -54,7 +54,7 @@ public class Menu extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 150, 60));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 150, 60));
 
         jButton2.setBackground(new java.awt.Color(1, 22, 39));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesMenu/Consultar.png"))); // NOI18N
@@ -63,7 +63,7 @@ public class Menu extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 170, 60));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 170, 60));
 
         jButton4.setBackground(new java.awt.Color(1, 22, 39));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesCatalogo/agregar.png"))); // NOI18N
@@ -93,7 +93,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1500, 620, 80, 70));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesMenu/Header.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1780, 60));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 1860, 60));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesMenu/Background Blurs.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, 1110, 930));
@@ -116,7 +116,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesCatalogo/Agregar Catalogo.png"))); // NOI18N
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1630, 290, -1, -1));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesCatalogo/Editar Catalogo.png"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesCatalogo\\Editar Catalogo.png")); // NOI18N
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 470, -1, -1));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesCatalogo/act o inac_1.png"))); // NOI18N
@@ -126,7 +126,7 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1921, Short.MAX_VALUE)
+            .addGap(0, 1930, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
