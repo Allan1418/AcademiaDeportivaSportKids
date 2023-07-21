@@ -1,8 +1,6 @@
 package JFrame;
 
 import acaddeportsportkids.Comun;
-import acaddeportsportkids.Comun;
-import acaddeportsportkids.Usuario;
 import acaddeportsportkids.Usuario;
 import java.awt.Color;
 import java.awt.event.KeyEvent;

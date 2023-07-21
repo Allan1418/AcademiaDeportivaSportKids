@@ -2,10 +2,7 @@ package JFrame;
 
 
 import acaddeportsportkids.AcadDeportSportKids;
-import acaddeportsportkids.AcadDeportSportKids;
 import acaddeportsportkids.Comun;
-import acaddeportsportkids.Comun;
-import acaddeportsportkids.Usuario;
 import acaddeportsportkids.Usuario;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
