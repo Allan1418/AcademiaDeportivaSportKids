@@ -22,7 +22,6 @@ public class Menu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         btnEditarCatalogo = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
@@ -32,8 +31,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -51,7 +48,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBackground(new java.awt.Color(1, 22, 39));
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesMenu\\USER.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesMenu/USER.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -60,7 +57,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 150, 60));
 
         jButton2.setBackground(new java.awt.Color(1, 22, 39));
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesMenu\\Consultar.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesMenu/Consultar.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -68,17 +65,8 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 0, 170, 60));
 
-        jButton3.setBackground(new java.awt.Color(1, 22, 39));
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesMenu\\_contact-me.png")); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1630, 0, 280, 60));
-
         jButton4.setBackground(new java.awt.Color(1, 22, 39));
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesCatalogo\\agregar.png")); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesCatalogo/agregar.png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -87,7 +75,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1500, 300, 80, 70));
 
         btnEditarCatalogo.setBackground(new java.awt.Color(1, 22, 39));
-        btnEditarCatalogo.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesCatalogo\\edit.png")); // NOI18N
+        btnEditarCatalogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesCatalogo/edit.png"))); // NOI18N
         btnEditarCatalogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarCatalogoActionPerformed(evt);
@@ -96,7 +84,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.add(btnEditarCatalogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1500, 460, 80, 70));
 
         jButton6.setBackground(new java.awt.Color(1, 22, 39));
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesCatalogo\\act o inac.png")); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesCatalogo/act o inac.png"))); // NOI18N
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -104,36 +92,34 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1500, 620, 80, 70));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesMenu\\Header.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesMenu/Header.png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1780, 60));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesMenu\\Background Blurs.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesMenu/Background Blurs.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, 1110, 930));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesMenu\\On behalf of our programming group we welcome you.png")); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesMenu/On behalf of our programming group we welcome you.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 640, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesMenu\\Footer.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesMenu/Footer.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 1000, 1760, 50));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesMenu\\Snake Game.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesMenu/Snake Game.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 260, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesMenu\\Elija la opción que deseas realizar en nuestro menú.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesMenu/Elija la opción que deseas realizar en nuestro menú.png"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, -1, -1));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1770, 140, -1, 870));
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1830, 260, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesMenu\\find me in_.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesMenu/find me in_.png"))); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1760, 970, -1, -1));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesCatalogo\\Agregar Catalogo.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesCatalogo/Agregar Catalogo.png"))); // NOI18N
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1630, 290, -1, -1));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesCatalogo\\Editar Catalogo.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesCatalogo/Editar Catalogo.png"))); // NOI18N
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 470, -1, -1));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesCatalogo\\act o inac_1.png")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesCatalogo/act o inac_1.png"))); // NOI18N
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 580, 170, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -188,13 +174,6 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        int salir = JOptionPane.showConfirmDialog(null, "¿Desea salir del sistema?",
-                "Salir", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        if (salir == 0) {
-            System.exit(0);
-        }    }//GEN-LAST:event_jButton3ActionPerformed
-
     public static void Arranque() {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -229,10 +208,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btnEditarCatalogo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -243,7 +220,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 

@@ -144,24 +144,27 @@ public class ConsultarUsuario extends javax.swing.JFrame {
         getTxtEstado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel1.add(getTxtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 700, 100, 30));
 
-        btnConsultar.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\IdeaProjects\\AcademiaDeportivaSportKids\\src\\imagenesConsultar\\Frame 4178.png")); // NOI18N
+        btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/Frame 4178.png"))); // NOI18N
         btnConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConsultarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 570, 290, 60));
+        jPanel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 540, 290, 60));
 
-        btnSalir.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\IdeaProjects\\AcademiaDeportivaSportKids\\src\\imagenesConsultar\\Frame 4205.png")); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/Frame 4205.png"))); // NOI18N
         btnSalir.setText("SALIR");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 680, 280, 60));
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 640, 280, 60));
 
+        btnEstado.setBackground(new java.awt.Color(204, 255, 204));
+        btnEstado.setForeground(new java.awt.Color(255, 255, 255));
         btnEstado.setEnabled(false);
+        btnEstado.setOpaque(true);
         btnEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEstadoActionPerformed(evt);
@@ -169,14 +172,14 @@ public class ConsultarUsuario extends javax.swing.JFrame {
         });
         jPanel1.add(btnEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 780, 91, 24));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\IdeaProjects\\AcademiaDeportivaSportKids\\src\\imagenesConsultar\\En este apartado se procederá a ingresar el Usuario por consultar para conseguir la información de dicho usuario.png")); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, -1, -1));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/En este apartado se procederá a ingresar el Usuario por consultar para conseguir la información de dicho usuario.png"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\IdeaProjects\\AcademiaDeportivaSportKids\\src\\imagenesConsultar\\Consultar Usuario.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/Consultar Usuario.png"))); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, 30));
 
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\IdeaProjects\\AcademiaDeportivaSportKids\\src\\imagenesConsultar\\create an account Enter here.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/create an account Enter here.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -184,16 +187,16 @@ public class ConsultarUsuario extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 860, -1, -1));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\IdeaProjects\\AcademiaDeportivaSportKids\\src\\imagenesConsultar\\User_01.png")); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/User_01.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 510, -1, 30));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\IdeaProjects\\AcademiaDeportivaSportKids\\src\\imagenesConsultar\\Label.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/Label.png"))); // NOI18N
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 690, -1, -1));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\IdeaProjects\\AcademiaDeportivaSportKids\\src\\imagenesConsultar\\User_01.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/User_01.png"))); // NOI18N
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, -1, -1));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\IdeaProjects\\AcademiaDeportivaSportKids\\src\\imagenesConsultar\\Vector.png")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/Vector.png"))); // NOI18N
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 610, 20, 20));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/Rectangle 1573.png"))); // NOI18N

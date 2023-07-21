@@ -217,7 +217,7 @@
         <Component class="javax.swing.JButton" name="btnConsultar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\anyelo\IdeaProjects\AcademiaDeportivaSportKids\src\imagenesConsultar\Frame 4178.png"/>
+              <Image iconType="3" name="/imagenesConsultar/Frame 4178.png"/>
             </Property>
           </Properties>
           <Events>
@@ -225,14 +225,14 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="770" y="570" width="290" height="60"/>
+              <AbsoluteConstraints x="770" y="540" width="290" height="60"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JButton" name="btnSalir">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\anyelo\IdeaProjects\AcademiaDeportivaSportKids\src\imagenesConsultar\Frame 4205.png"/>
+              <Image iconType="3" name="/imagenesConsultar/Frame 4205.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="SALIR"/>
           </Properties>
@@ -241,13 +241,20 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="780" y="680" width="280" height="60"/>
+              <AbsoluteConstraints x="780" y="640" width="280" height="60"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JButton" name="btnEstado">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="ff" red="cc" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
             <Property name="enabled" type="boolean" value="false"/>
+            <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEstadoActionPerformed"/>
@@ -261,19 +268,19 @@
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\anyelo\IdeaProjects\AcademiaDeportivaSportKids\src\imagenesConsultar\En este apartado se proceder&#xe1; a ingresar el Usuario por consultar para conseguir la informaci&#xf3;n de dicho usuario.png"/>
+              <Image iconType="3" name="/imagenesConsultar/En este apartado se proceder&#xe1; a ingresar el Usuario por consultar para conseguir la informaci&#xf3;n de dicho usuario.png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="480" y="230" width="-1" height="-1"/>
+              <AbsoluteConstraints x="450" y="240" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\anyelo\IdeaProjects\AcademiaDeportivaSportKids\src\imagenesConsultar\Consultar Usuario.png"/>
+              <Image iconType="3" name="/imagenesConsultar/Consultar Usuario.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -288,7 +295,7 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\anyelo\IdeaProjects\AcademiaDeportivaSportKids\src\imagenesConsultar\create an account Enter here.png"/>
+              <Image iconType="3" name="/imagenesConsultar/create an account Enter here.png"/>
             </Property>
           </Properties>
           <Events>
@@ -303,7 +310,7 @@
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\anyelo\IdeaProjects\AcademiaDeportivaSportKids\src\imagenesConsultar\User_01.png"/>
+              <Image iconType="3" name="/imagenesConsultar/User_01.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -315,7 +322,7 @@
         <Component class="javax.swing.JLabel" name="jLabel10">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\anyelo\IdeaProjects\AcademiaDeportivaSportKids\src\imagenesConsultar\Label.png"/>
+              <Image iconType="3" name="/imagenesConsultar/Label.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -327,7 +334,7 @@
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\anyelo\IdeaProjects\AcademiaDeportivaSportKids\src\imagenesConsultar\User_01.png"/>
+              <Image iconType="3" name="/imagenesConsultar/User_01.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -339,7 +346,7 @@
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\anyelo\IdeaProjects\AcademiaDeportivaSportKids\src\imagenesConsultar\Vector.png"/>
+              <Image iconType="3" name="/imagenesConsultar/Vector.png"/>
             </Property>
           </Properties>
           <Constraints>

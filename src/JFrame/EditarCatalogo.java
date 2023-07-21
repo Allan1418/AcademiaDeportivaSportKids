@@ -29,10 +29,8 @@ public class EditarCatalogo extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
@@ -40,7 +38,6 @@ public class EditarCatalogo extends javax.swing.JFrame {
         jTextField4 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -48,9 +45,8 @@ public class EditarCatalogo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 720, -1, 30));
 
         jButton1.setBackground(new java.awt.Color(134, 125, 90));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -67,7 +63,6 @@ public class EditarCatalogo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 120, 30));
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 650, -1, 30));
 
         jButton3.setBackground(new java.awt.Color(134, 125, 90));
         jButton3.setForeground(new java.awt.Color(92, 86, 62));
@@ -85,7 +80,7 @@ public class EditarCatalogo extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 400, 400, 100));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 400, 100));
 
         jTextField2.setBackground(new java.awt.Color(51, 51, 51));
         jTextField2.setOpaque(true);
@@ -103,7 +98,7 @@ public class EditarCatalogo extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 130, 30));
+        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 130, 30));
 
         jTextField4.setBackground(new java.awt.Color(51, 51, 51));
         jTextField4.setForeground(new java.awt.Color(255, 255, 255));
@@ -113,32 +108,31 @@ public class EditarCatalogo extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 520, 400, 260));
+        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 500, 400, 260));
 
         jLabel3.setBackground(new java.awt.Color(204, 255, 204));
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesEdit\\logo.png")); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, -1, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesEdit/logo.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, -1, -1));
 
         jLabel2.setText("ID:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, 20));
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 420, 20));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, -1, 20));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 51, 51));
         jLabel6.setText("Datos del Catalogo por Editar");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 240, 40));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 240, 40));
 
         jLabel7.setText("ID:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
         jLabel1.setForeground(new java.awt.Color(153, 102, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesEdit\\TItulo.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesEdit/Edición de Catálogos  Ingrese los cambios que deseas realizar al catalogo.png"))); // NOI18N
         jLabel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 460, 100));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 380, 100));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesEdit\\image 1.png")); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 800));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesEdit/image 1.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 0, 1150, 770));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -222,14 +216,11 @@ public class EditarCatalogo extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
