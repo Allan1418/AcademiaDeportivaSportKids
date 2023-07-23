@@ -1,7 +1,6 @@
 
 package acaddeportsportkids;
-
-import javax.swing.JOptionPane;
+import JFrame.Menu;
 import java.util.ArrayList;
 
 
@@ -15,7 +14,7 @@ public class AcadDeportSportKids {
         Usuarios.add(new Usuario("1", "1 1 1", "1", (new char[] {'1'}), true));
         
         //arranque del sistema
-        Menu.arranque();
+        Menu.Arranque();
             
             
             
