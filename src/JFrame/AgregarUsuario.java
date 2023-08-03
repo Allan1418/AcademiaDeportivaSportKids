@@ -75,21 +75,19 @@ public class AgregarUsuario extends javax.swing.JFrame {
         txtId = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtConfPss = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         btnAgregar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -144,6 +142,9 @@ public class AgregarUsuario extends javax.swing.JFrame {
             }
         });
         jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, 280, 40));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesAgregar/Sign Up.png"))); // NOI18N
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 850, 90, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 204));
         jLabel4.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
@@ -220,14 +221,9 @@ public class AgregarUsuario extends javax.swing.JFrame {
         });
         jPanel2.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 540, 280, 40));
 
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Agregar/Login.png"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 840, 40, 40));
-
         btnAgregar.setBackground(new java.awt.Color(0, 0, 0));
         btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
-        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Agregar/Rectangle 6.png"))); // NOI18N
+        btnAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesAgregar/Rectangle 6.png"))); // NOI18N
         btnAgregar.setEnabled(false);
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,7 +233,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         jPanel2.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 840, 230, 40));
 
         btnSalir.setBackground(new java.awt.Color(255, 255, 204));
-        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Agregar/Arrow 1.png"))); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesAgregar/Arrow 1.png"))); // NOI18N
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
@@ -247,15 +243,12 @@ public class AgregarUsuario extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Matura MT Script Capitals", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Agregar/Image.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesAgregar/FondoDerecha.png"))); // NOI18N
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 0, 690, 960));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Agregar/Sign Up.png"))); // NOI18N
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 20, 90, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 204));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Agregar/Register New Account.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesAgregar/Register New Account.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -266,11 +259,8 @@ public class AgregarUsuario extends javax.swing.JFrame {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesAgregar/Bienvenido a  acaddePortsportkids.png"))); // NOI18N
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, -1));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Agregar/Welcome to acaddePortsportkids. dashboard Community.png"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesAgregar/Welcome.png"))); // NOI18N
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, -1, -1));
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Agregar/Language.png"))); // NOI18N
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 50, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -444,8 +434,6 @@ public class AgregarUsuario extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

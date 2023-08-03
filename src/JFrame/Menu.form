@@ -258,12 +258,12 @@
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/imagenesCatalogo/act o inac_1.png"/>
+              <Image iconType="3" name="/imagenesCatalogo/Editar Catalogo.png"/>
             </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="1640" y="580" width="170" height="-1"/>
+              <AbsoluteConstraints x="1610" y="480" width="240" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
