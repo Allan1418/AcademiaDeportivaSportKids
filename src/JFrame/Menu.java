@@ -12,7 +12,7 @@ public class Menu extends javax.swing.JFrame {
         setTitle("Menú Principal");
         setLocationRelativeTo(null);
         setExtendedState(MAXIMIZED_BOTH);
-        setResizable(false);
+        setResizable(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -115,8 +115,6 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesCatalogo/Agregar Catalogo.png"))); // NOI18N
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1630, 290, -1, -1));
-
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\anyelo\\OneDrive - Universidad Fidélitas\\Documentos\\NetBeansProjects\\Pyoyecto\\src\\imagenesCatalogo\\Editar Catalogo.png")); // NOI18N
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1640, 470, -1, -1));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesCatalogo/act o inac_1.png"))); // NOI18N
@@ -167,7 +165,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btnEditarCatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCatalogoActionPerformed
-        EditarCatalogo.arranque();
+        CrearCliente.arranque();
     }//GEN-LAST:event_btnEditarCatalogoActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed

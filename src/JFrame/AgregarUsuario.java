@@ -107,8 +107,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         txtId.setForeground(new java.awt.Color(255, 255, 255));
         txtId.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtId.setActionCommand("<Not Set>");
-        txtId.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtId.setOpaque(true);
+        txtId.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdActionPerformed(evt);
@@ -133,8 +132,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         txtNombre.setForeground(new java.awt.Color(255, 255, 255));
         txtNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNombre.setActionCommand("<Not Set>");
-        txtNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtNombre.setOpaque(true);
+        txtNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
@@ -159,8 +157,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         txtConfPss.setForeground(new java.awt.Color(255, 255, 255));
         txtConfPss.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtConfPss.setActionCommand("<Not Set>");
-        txtConfPss.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtConfPss.setOpaque(true);
+        txtConfPss.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtConfPss.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtConfPssActionPerformed(evt);
@@ -185,8 +182,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         txtPassword.setForeground(new java.awt.Color(255, 255, 255));
         txtPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtPassword.setActionCommand("<Not Set>");
-        txtPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtPassword.setOpaque(true);
+        txtPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPasswordActionPerformed(evt);
@@ -211,8 +207,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         txtUser.setForeground(new java.awt.Color(255, 255, 255));
         txtUser.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtUser.setActionCommand("<Not Set>");
-        txtUser.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtUser.setOpaque(true);
+        txtUser.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUserActionPerformed(evt);
@@ -223,7 +218,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
                 txtUserKeyReleased(evt);
             }
         });
-        jPanel2.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 540, 270, 40));
+        jPanel2.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 540, 280, 40));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -243,7 +238,6 @@ public class AgregarUsuario extends javax.swing.JFrame {
 
         btnSalir.setBackground(new java.awt.Color(255, 255, 204));
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Agregar/Arrow 1.png"))); // NOI18N
-        btnSalir.setOpaque(true);
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
@@ -262,7 +256,6 @@ public class AgregarUsuario extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(255, 255, 204));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Agregar/Register New Account.png"))); // NOI18N
-        jButton1.setOpaque(true);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

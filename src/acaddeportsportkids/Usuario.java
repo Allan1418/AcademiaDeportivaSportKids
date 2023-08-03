@@ -1,10 +1,10 @@
 
 package acaddeportsportkids;
 
+import java.util.ArrayList;
+
 
 public class Usuario {
-
-    //Mejoras
 
     //Atributos
     private String id;
@@ -12,6 +12,7 @@ public class Usuario {
     private String user;
     private char[] password;
     private boolean estado;
+    
     
     //Metodos get y set
     public String getId() {
