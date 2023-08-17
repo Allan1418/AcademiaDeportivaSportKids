@@ -1,6 +1,8 @@
 
 package acaddeportsportkids;
 
+import java.util.ArrayList;
+
 
 public class Deportista extends Usuario{
     
@@ -9,6 +11,10 @@ public class Deportista extends Usuario{
     private String direccion;
     private String telefono;
     private String correo;
+    
+    //Atributos exclusivos
+    private String padreACargo;
+    private String Rutina;
         
     //Metodos get y set
     public String getCiudad() {
@@ -42,6 +48,26 @@ public class Deportista extends Usuario{
     public void setCorreo(String correo) {
         this.correo = correo;
     }
+    
+    //get y set exclusivos
+    public String getPadreACargo() {
+        return padreACargo;
+    }
+
+    public void setPadreACargo(String padreACargo) {
+        this.padreACargo = padreACargo;
+    }
+
+    public String getRutina() {
+        return Rutina;
+    }
+
+    public void setRutina(String Rutina) {
+        this.Rutina = Rutina;
+    }
+    
+    
+    
 
     //Constructores
     public Deportista(Usuario actual, String ciudad, String direccion, String telefono, String correo) {
@@ -50,6 +76,9 @@ public class Deportista extends Usuario{
         this.direccion = direccion;
         this.telefono = telefono;
         this.correo = correo;
+        
+        this.padreACargo = "";
+        this.Rutina = "";
     }
     
     

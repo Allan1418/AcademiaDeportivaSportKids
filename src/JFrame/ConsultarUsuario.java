@@ -1,7 +1,6 @@
 package JFrame;
 
-import acaddeportsportkids.Comun;
-import acaddeportsportkids.Usuario;
+import acaddeportsportkids.*;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 
@@ -18,17 +17,22 @@ public class ConsultarUsuario extends javax.swing.JFrame {
 
     public void consultar() {
         
-        actual = Comun.buscarUsuario(setTxtUsuario.getText());
+        actual = Comun.buscarUsuarioArray(setTxtUsuario.getText());
         if (actual != null) {
             this.getTxtUser.setText(String.valueOf(actual.getId()));
             this.getTxtNombre.setText(actual.getNombre());
             this.getTxtEstado.setText(actual.getEstadoPrint());
-            btnEstado.setEnabled(true);
-            if (actual.getEstado()) {
-                btnEstado.setText("Desactivar");
-            }else{
-                btnEstado.setText("Activar");
+            
+            if (!(actual instanceof Deportista)) {
+                btnEstado.setEnabled(true);
+                if (actual.getEstado()) {
+                    btnEstado.setText("Desactivar");
+                } else {
+                    btnEstado.setText("Activar");
+                }
             }
+            
+            
             
         } else {
             /*/JOptionPane.showMessageDialog(null, "¡No se encontró el dato buscado!",
@@ -231,6 +235,8 @@ public class ConsultarUsuario extends javax.swing.JFrame {
     private void btnEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstadoActionPerformed
 
         actual.setEstado(!actual.getEstado());
+        Comun.reempObjctArch(actual, AcadDeportSportKids.ARCH_USUARIOS);
+        
         getTxtEstado.setText(actual.getEstadoPrint());
         if (actual.getEstado()) {
             btnEstado.setText("Desactivar");

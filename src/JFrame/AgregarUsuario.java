@@ -21,7 +21,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
 
     public void agregar() {
         
-        if (Comun.buscarUsuario(txtUser.getText()) != null) {
+        if (Comun.buscarUsuarioArray(txtUser.getText()) != null) {
             txtUser.setText("");
             JOptionPane.showMessageDialog(null, "El Usuario ya existe!", "Academia Deportiva Sport Kids",
                 JOptionPane.ERROR_MESSAGE);
@@ -37,7 +37,8 @@ public class AgregarUsuario extends javax.swing.JFrame {
         }
         
         Usuario usuarioNuevo = new Usuario(txtId.getText(), txtNombre.getText(), txtUser.getText(), txtPassword.getPassword(), true);
-        AcadDeportSportKids.Usuarios.add(usuarioNuevo);
+        AcadDeportSportKids.listUsuarios.add(usuarioNuevo);
+        Comun.agregarArch(usuarioNuevo, AcadDeportSportKids.ARCH_USUARIOS);
         limpiar();
         comprVacio();
         JOptionPane.showMessageDialog(null, "¡Datos grabados correctamente!", "Datos guardados",

@@ -1,10 +1,11 @@
 
 package acaddeportsportkids;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Usuario {
+public class Usuario implements Serializable {
 
     //Atributos
     private String id;
