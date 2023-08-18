@@ -7,15 +7,13 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author anyelo
- */
+
 
 
 public class CrearCliente extends javax.swing.JFrame {
 
     private Usuario actualUsuario;
+    private Deportista actualModificar;
     private int tipoCliente = 0;
     DefaultListModel<String> modelo = new DefaultListModel<>();
     
@@ -23,6 +21,8 @@ public class CrearCliente extends javax.swing.JFrame {
         initComponents();
         setResizable(false);
         setLocationRelativeTo(null);
+        btnCancelar.setVisible(false);
+        
     }
 
     public void agregarCliente(){
@@ -58,6 +58,15 @@ public class CrearCliente extends javax.swing.JFrame {
             PadreFamilia padre = new PadreFamilia(actualUsuario, cid, direc, tel, direc, modelo);
             Comun.reempObjctArch(padre, AcadDeportSportKids.ARCH_USUARIOS);
             Comun.reempUsuarioArray(padre);
+            
+            
+            for (int i = 0; i < modelo.size(); i++) {
+                Deportista reempl = (Deportista) Comun.consultarArch(modelo.get(i), AcadDeportSportKids.ARCH_USUARIOS);
+                reempl.setPadreACargo(actualUsuario.getNombre());
+                Comun.reempObjctArch(reempl, AcadDeportSportKids.ARCH_USUARIOS);
+                
+            }
+            
             JOptionPane.showMessageDialog(null,"Nuevo Padre de Familia creado con exito!","Nuevo Cliente!", JOptionPane.INFORMATION_MESSAGE);
             limpiar();
             return;
@@ -87,11 +96,14 @@ public class CrearCliente extends javax.swing.JFrame {
         
         
         if (actualUsuario instanceof Deportista) {
+            actualModificar = (Deportista) actualUsuario;
             if (actualUsuario instanceof PadreFamilia) {
-                txterrUser.setText("El usuario ya es un Padre de Familia!");
-                return;
+                txterrUser.setText("El usuario es un Padre de Familia!");
+            } else{
+                txterrUser.setText("El usuario es un Deportista!");
             }
-            txterrUser.setText("El usuario ya es un Deportista!");
+            prepararModificar();
+            
             return;
         }
         
@@ -103,8 +115,65 @@ public class CrearCliente extends javax.swing.JFrame {
         btnPadreFamilia.setEnabled(true);
         btnPadreFamilia.setSelected(false);
         btnDeportista.setSelected(false);
+        
+        setTextCiudad.setEditable(true);
+        SetTextDirec.setEditable(true);
+        SetTextTel.setEditable(true);
+        SetTextmail.setEditable(true);
+        
         btnFinal.setEnabled(true);
         btnFinal.setText("Crear");
+    }
+    
+    public void prepararModificar() {
+        btnFinal.setText("Modificar");
+        btnFinal.setEnabled(true);
+        
+        setTextCiudad.setEnabled(true);
+        SetTextDirec.setEnabled(true);
+        SetTextTel.setEnabled(true);
+        SetTextmail.setEnabled(true);
+        
+        setTextCiudad.setEditable(false);
+        SetTextDirec.setEditable(false);
+        SetTextTel.setEditable(false);
+        SetTextmail.setEditable(false);
+        
+        setTextCiudad.setText(actualModificar.getCiudad());
+        SetTextDirec.setText(actualModificar.getDireccion());
+        SetTextTel.setText(actualModificar.getTelefono());
+        SetTextmail.setText(actualModificar.getCorreo());
+        
+        if (actualModificar instanceof PadreFamilia) {
+            listaHijosDisplay.setEnabled(true);
+            modelo = ((PadreFamilia) actualModificar).getHijos();
+            listaHijosDisplay.setModel(modelo);
+        } else{
+            getTxtPadreCargo.setText("Padre a cargo: " + actualModificar.getPadreACargo());
+        }
+        
+        
+    }
+    
+    public void modificando(){
+        btnFinal.setText("Guardar");
+        btnCancelar.setVisible(true);
+        btnCancelar.requestFocus();
+        
+        setTextCiudad.setEditable(true);
+        SetTextDirec.setEditable(true);
+        SetTextTel.setEditable(true);
+        SetTextmail.setEditable(true);
+        
+        if (actualModificar instanceof PadreFamilia) {
+            setTxtHijoCargo.setEnabled(true);
+            btnAgregarHijo.setEnabled(true);
+            btnQuitarHijo.setEnabled(true);
+            tipoCliente = 2;
+        } else{
+            tipoCliente = 1;
+        }
+        
     }
     
     public void agregarHijo(){
@@ -169,9 +238,13 @@ public class CrearCliente extends javax.swing.JFrame {
         
         btnDeportista.setEnabled(false);
         btnPadreFamilia.setEnabled(false);
+        getTxtPadreCargo.setText("");
+        
         tipoCliente = 0;
         btnFinal.setEnabled(false);
         btnFinal.setText("");
+        
+        btnCancelar.setVisible(false);
         
         
         limpiarHijos();
@@ -225,6 +298,8 @@ public class CrearCliente extends javax.swing.JFrame {
         txterrHijo = new javax.swing.JLabel();
         txterrUser = new javax.swing.JLabel();
         btnFinal = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        getTxtPadreCargo = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -392,6 +467,17 @@ public class CrearCliente extends javax.swing.JFrame {
         });
         jPanel1.add(btnFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 80, 30));
 
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 80, 30));
+
+        getTxtPadreCargo.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(getTxtPadreCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 130, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -430,7 +516,6 @@ public class CrearCliente extends javax.swing.JFrame {
             modelo.remove(index);
         }
     }//GEN-LAST:event_btnQuitarHijoActionPerformed
-
     
     private void btnAgregarHijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarHijoActionPerformed
 
@@ -484,8 +569,26 @@ public class CrearCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_setTxtHijoCargoKeyReleased
 
     private void btnFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalActionPerformed
-        agregarCliente();
+        
+        switch (btnFinal.getText()) {
+            case "Crear":
+                agregarCliente();
+                break;
+            case "Modificar":
+                modificando();
+                break;
+            case "Guardar":
+                agregarCliente();
+                break;
+            default:
+                break;
+        }
+        
     }//GEN-LAST:event_btnFinalActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        limpiar();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -528,6 +631,7 @@ public class CrearCliente extends javax.swing.JFrame {
     private javax.swing.JTextField SetTextTel;
     private javax.swing.JTextField SetTextmail;
     private javax.swing.JButton btnAgregarHijo;
+    private javax.swing.JButton btnCancelar;
     private javax.swing.JToggleButton btnDeportista;
     private javax.swing.JButton btnFinal;
     private javax.swing.JToggleButton btnPadreFamilia;
@@ -536,6 +640,7 @@ public class CrearCliente extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel getTxtId;
     private javax.swing.JLabel getTxtNombre;
+    private javax.swing.JLabel getTxtPadreCargo;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
