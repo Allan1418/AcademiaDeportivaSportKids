@@ -31,13 +31,13 @@ public class Rutina extends Deporte{
     //Metodos obsoletos
     @Deprecated
     @Override
-    public ArrayList<String> getDeportes() {
+    public ArrayList<String> getRutinas() {
         return null;
     }
 
     @Deprecated
     @Override
-   public void setDeportes(ArrayList<String> deportes) {}
+   public void setRutinas(ArrayList<String> deportes) {}
 
     public Rutina(String nombre, String features, boolean estado, String deporteAsoc, String duraccion) {
         super(nombre, features, estado);

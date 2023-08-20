@@ -25,11 +25,11 @@ public class AcadDeportSportKids {
         borrarArchivos();
         
         Deporte a = new Deporte("1", "1 1 1", true);
-        a.setDeportes(new ArrayList<>());
+        a.setRutinas(new ArrayList<>());
         Deporte b = new Deporte("2", "2 2 2", true);
-        b.setDeportes(new ArrayList<>());
+        b.setRutinas(new ArrayList<>());
         Deporte c = new Deporte("3", "3 3 3", true);
-        c.setDeportes(new ArrayList<String>(){{ add("4"); }});
+        c.setRutinas(new ArrayList<String>(){{ add("4"); }});
         
         
         Comun.agregarArch(a, ARCH_DEPORU);

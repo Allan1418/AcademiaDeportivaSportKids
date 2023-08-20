@@ -95,8 +95,12 @@ public class DeporteRutina extends javax.swing.JFrame {
             
             //se agrega la referencia de rutina al obj deporte
             Deporte cambio = (Deporte) Comun.consultarArch(deporCorres, AcadDeportSportKids.ARCH_DEPORU);
-            cambio.getDeportes().add(nombr);
-            Comun.reempObjctArch(cambio, AcadDeportSportKids.ARCH_DEPORU);
+            
+            if (!cambio.getRutinas().contains(nombr)) {
+                cambio.getRutinas().add(nombr);
+                Comun.reempObjctArch(cambio, AcadDeportSportKids.ARCH_DEPORU);
+            }
+            
             
             JOptionPane.showMessageDialog(null,"Datos guardados Correctamente!","Nueva Rutina!", JOptionPane.INFORMATION_MESSAGE);
             limpiar();
@@ -104,7 +108,7 @@ public class DeporteRutina extends javax.swing.JFrame {
         //se agrega obj Deporte
         }else if (tipoDeporu == 1) {
             Deporte nuevo = new Deporte(nombr, carac, estado);
-            nuevo.setDeportes(new ArrayList<>());
+            nuevo.setRutinas(new ArrayList<>());
             escribirArch(nuevo);
             JOptionPane.showMessageDialog(null,"Datos guardados Correctamente!","Nuevo Deporte!", JOptionPane.INFORMATION_MESSAGE);
             limpiar();
@@ -120,10 +124,10 @@ public class DeporteRutina extends javax.swing.JFrame {
             if ((actualModificar instanceof Rutina) && (!deporCorres.equals(deporAnterior))) {
                 Deporte reemp = (Deporte) Comun.consultarArch(deporAnterior, AcadDeportSportKids.ARCH_DEPORU);
                 
-                ArrayList<String> array = reemp.getDeportes();
+                ArrayList<String> array = reemp.getRutinas();
                 array.remove(actualModificar.getNombre());
                 
-                reemp.setDeportes(array);
+                reemp.setRutinas(array);
                 Comun.reempObjctArch(reemp, AcadDeportSportKids.ARCH_DEPORU);
                 
                 
@@ -185,7 +189,7 @@ public class DeporteRutina extends javax.swing.JFrame {
             deporAnterior = deporCorres;
             
         } else {
-            if (!((Deporte) Comun.consultarArch(actualModificar.getNombre(), AcadDeportSportKids.ARCH_DEPORU)).getDeportes().isEmpty()) {
+            if (!((Deporte) Comun.consultarArch(actualModificar.getNombre(), AcadDeportSportKids.ARCH_DEPORU)).getRutinas().isEmpty()) {
                 errEstado.setText("El Deporte tiene Relacion con Rutina");
                 return;
             }
@@ -225,7 +229,7 @@ public class DeporteRutina extends javax.swing.JFrame {
                 errDeporte.setText("El deporte esta Inactivo!");
             }else{
                 
-                if (deporte.getDeportes().contains(deporCorres)) {
+                if (deporte.getRutinas().contains(deporCorres)) {
                     deporAnterior = deporCorres;
                 }
                 

@@ -13,7 +13,7 @@ public class Deporte implements Serializable{
     private boolean estado;
     
     //Atributos exclusivos
-    private ArrayList<String> deportes;
+    private ArrayList<String> rutinas;
     
     //Metodos get y set
 
@@ -50,12 +50,12 @@ public class Deporte implements Serializable{
     
     //Metodo exclusivos
 
-    public ArrayList<String> getDeportes() {
-        return deportes;
+    public ArrayList<String> getRutinas() {
+        return rutinas;
     }
 
-    public void setDeportes(ArrayList<String> deportes) {
-        this.deportes = deportes;
+    public void setRutinas(ArrayList<String> rutinas) {
+        this.rutinas = rutinas;
     }
     
     
@@ -65,7 +65,7 @@ public class Deporte implements Serializable{
         this.nombre = nombre;
         this.features = features;
         this.estado = estado;
-        this.deportes = null;
+        this.rutinas = null;
     }
     
     
