@@ -79,11 +79,11 @@ public class Comun {
                         break;
                     }
                     
-                } else if(actual instanceof Deporte deporte)
+                } else if(actual instanceof Deporte deporte){
                     if (deporte.getNombre().equals(match)) {
                         break;
                     }
-                
+                }
                 actual = null;
             }
             
@@ -132,12 +132,13 @@ public class Comun {
                     }else{
                         listTemp.add(lectura);
                     }
-                } else if(lectura instanceof Deporte deporte)
+                } else if(lectura instanceof Deporte deporte){
                     if (deporte.getNombre().equals(((Deporte) reemp).getNombre())) {
                         listTemp.add(reemp);
                     }else{
                         listTemp.add(lectura);
                     }
+                }
                 
                 
             }
