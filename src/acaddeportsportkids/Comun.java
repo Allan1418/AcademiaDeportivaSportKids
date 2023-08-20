@@ -62,9 +62,14 @@ public class Comun {
         
         Object actual = null;
         ObjectInputStream arch = null;
+        
+        if (!new File(nombreArch).exists()) {
+            return actual;
+        }
 
         try {
             arch = new ObjectInputStream(new FileInputStream(nombreArch));
+            
 
             while (true) {
                 actual = arch.readObject();
@@ -74,7 +79,10 @@ public class Comun {
                         break;
                     }
                     
-                }
+                } else if(actual instanceof Deporte deporte)
+                    if (deporte.getNombre().equals(match)) {
+                        break;
+                    }
                 
                 actual = null;
             }
@@ -100,6 +108,14 @@ public class Comun {
     }
     
     public static void reempObjctArch(Object reemp, String nombreArch){
+        
+        if (!new File(nombreArch).exists()) {
+            agregarArch(reemp, nombreArch);
+            return;
+        }
+        
+        
+        
         ArrayList<Object> listTemp = new ArrayList<>();
         
         //lectura de archivo
@@ -116,7 +132,12 @@ public class Comun {
                     }else{
                         listTemp.add(lectura);
                     }
-                }
+                } else if(lectura instanceof Deporte deporte)
+                    if (deporte.getNombre().equals(((Deporte) reemp).getNombre())) {
+                        listTemp.add(reemp);
+                    }else{
+                        listTemp.add(lectura);
+                    }
                 
                 
             }
