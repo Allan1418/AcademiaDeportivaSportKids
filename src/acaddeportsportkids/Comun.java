@@ -83,6 +83,10 @@ public class Comun {
                     if (deporte.getNombre().equals(match)) {
                         break;
                     }
+                } else if(actual instanceof Factura factura){
+                    if (factura.getCodigo().equals(match)) {
+                        break;
+                    }
                 }
                 actual = null;
             }
@@ -170,7 +174,6 @@ public class Comun {
         
         
     }
-    
     
     public static boolean regexConfirm(String regex, String txt, String err) {
         if (txt.matches(regex)) {

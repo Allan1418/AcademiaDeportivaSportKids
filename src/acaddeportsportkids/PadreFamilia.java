@@ -10,6 +10,7 @@ public class PadreFamilia extends Deportista{
     //Atributos
     //private ArrayList<String> hijos;
     private DefaultListModel<String> hijos = new DefaultListModel<>();
+    private DefaultListModel<String> facturas = new DefaultListModel<>();
     
     
     //Metodos get y set
@@ -20,7 +21,14 @@ public class PadreFamilia extends Deportista{
     public void setHijos(DefaultListModel<String> hijos) {
         this.hijos = hijos;
     }
-    
+
+    public DefaultListModel<String> getFacturas() {
+        return facturas;
+    }
+
+    public void setFacturas(DefaultListModel<String> facturas) {
+        this.facturas = facturas;
+    }
     
     //metodos obsoletos
     @Deprecated

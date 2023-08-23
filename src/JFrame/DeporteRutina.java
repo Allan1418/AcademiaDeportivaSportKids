@@ -320,6 +320,8 @@ public class DeporteRutina extends javax.swing.JFrame {
         btnBuscarDepor = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         errEstado = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -327,7 +329,8 @@ public class DeporteRutina extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -335,15 +338,19 @@ public class DeporteRutina extends javax.swing.JFrame {
                 btnBuscarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(435, 36, 88, 32));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel1.setText("Nombre:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 54, -1));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel2.setText("características:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 233, -1, -1));
 
         errNombre.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         errNombre.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(errNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 216, 42));
 
         btnDeporte.setText("Deporte");
         btnDeporte.setEnabled(false);
@@ -352,6 +359,7 @@ public class DeporteRutina extends javax.swing.JFrame {
                 btnDeporteActionPerformed(evt);
             }
         });
+        jPanel1.add(btnDeporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 95, 32));
 
         btnRutina.setText("Rutina");
         btnRutina.setEnabled(false);
@@ -360,24 +368,36 @@ public class DeporteRutina extends javax.swing.JFrame {
                 btnRutinaActionPerformed(evt);
             }
         });
+        jPanel1.add(btnRutina, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 140, 95, 32));
 
         setTxtFeatures.setEnabled(false);
+        jPanel1.add(setTxtFeatures, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 227, 181, 32));
 
+        setTxtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setTxtNombreActionPerformed(evt);
+            }
+        });
         setTxtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 setTxtNombreKeyReleased(evt);
             }
         });
+        jPanel1.add(setTxtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 35, 177, 32));
 
         getTxtName.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jPanel1.add(getTxtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 190, 181, 25));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel3.setText("Estado:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 271, -1, -1));
 
         getTxtEstado.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jPanel1.add(getTxtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 271, 87, -1));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel4.setText("Deporte al que Corresponde:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 360, -1, -1));
 
         setTxtDepCorres.setEnabled(false);
         setTxtDepCorres.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -385,11 +405,14 @@ public class DeporteRutina extends javax.swing.JFrame {
                 setTxtDepCorresKeyReleased(evt);
             }
         });
+        jPanel1.add(setTxtDepCorres, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 354, 181, 32));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel5.setText("Duración:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 448, -1, -1));
 
         setTxtDurac.setEnabled(false);
+        jPanel1.add(setTxtDurac, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 442, 181, 32));
 
         btnFinal.setEnabled(false);
         btnFinal.addActionListener(new java.awt.event.ActionListener() {
@@ -397,9 +420,11 @@ public class DeporteRutina extends javax.swing.JFrame {
                 btnFinalActionPerformed(evt);
             }
         });
+        jPanel1.add(btnFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 503, 88, 32));
 
         errDeporte.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         errDeporte.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(errDeporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 393, 214, 24));
 
         btnEstado.setEnabled(false);
         btnEstado.addActionListener(new java.awt.event.ActionListener() {
@@ -407,6 +432,7 @@ public class DeporteRutina extends javax.swing.JFrame {
                 btnEstadoActionPerformed(evt);
             }
         });
+        jPanel1.add(btnEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 271, 88, 32));
 
         btnBuscarDepor.setText("Buscar");
         btnBuscarDepor.addActionListener(new java.awt.event.ActionListener() {
@@ -414,6 +440,7 @@ public class DeporteRutina extends javax.swing.JFrame {
                 btnBuscarDeporActionPerformed(evt);
             }
         });
+        jPanel1.add(btnBuscarDepor, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 355, 88, 32));
 
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -421,116 +448,27 @@ public class DeporteRutina extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(136, 503, 88, 32));
 
         errEstado.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         errEstado.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(errEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 309, 271, 24));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(240, 240, 240)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnDeporte, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnRutina, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(errNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(setTxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(errDeporte, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(getTxtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(btnFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(setTxtFeatures, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(getTxtName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(setTxtDepCorres, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(setTxtDurac, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(18, 18, 18)
-                                .addComponent(btnBuscarDepor, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(errEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(304, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(setTxtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(errNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDeporte, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRutina, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1)
-                    .addComponent(getTxtName, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(setTxtFeatures, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(getTxtEstado)
-                            .addComponent(jLabel3))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(errEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(setTxtDepCorres, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscarDepor, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(errDeporte, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(setTxtDurac, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(43, Short.MAX_VALUE))
-        );
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesRutinaDeporte/Ellipse 3.png"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, -1, 580));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesRutinaDeporte/Ellipse 1.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 580, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -613,6 +551,10 @@ public class DeporteRutina extends javax.swing.JFrame {
         prepararDeporu();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
+    private void setTxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setTxtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_setTxtNombreActionPerformed
+
     
     public static void arranque() {
         
@@ -662,6 +604,8 @@ public class DeporteRutina extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField setTxtDepCorres;
     private javax.swing.JTextField setTxtDurac;

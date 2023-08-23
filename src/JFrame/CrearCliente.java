@@ -15,6 +15,7 @@ public class CrearCliente extends javax.swing.JFrame {
     private Usuario actualUsuario;
     private Deportista actualModificar;
     private int tipoCliente = 0;
+    
     DefaultListModel<String> modelo = new DefaultListModel<>();
     
     public CrearCliente() {
@@ -300,6 +301,7 @@ public class CrearCliente extends javax.swing.JFrame {
         btnFinal = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         getTxtPadreCargo = new javax.swing.JLabel();
+        txterrUser1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -314,10 +316,10 @@ public class CrearCliente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnUser.setBackground(new java.awt.Color(255, 255, 255));
+        btnUser.setBackground(new java.awt.Color(153, 153, 153));
         btnUser.setText("Buscar");
         btnUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -332,11 +334,11 @@ public class CrearCliente extends javax.swing.JFrame {
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombre:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, 20));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 50, -1));
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("User:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 40, -1));
 
         jLabel1.setForeground(new java.awt.Color(153, 102, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesEdit/Edición de Catálogos  Ingrese los cambios que deseas realizar al catalogo.png"))); // NOI18N
@@ -363,13 +365,13 @@ public class CrearCliente extends javax.swing.JFrame {
 
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("ID:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, -1, 20));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 20, 20));
 
         getTxtNombre.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(getTxtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 170, 20));
 
         getTxtId.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(getTxtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 170, 20));
+        jPanel1.add(getTxtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 170, 20));
 
         SetTextDirec.setEnabled(false);
         jPanel1.add(SetTextDirec, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 170, -1));
@@ -406,6 +408,11 @@ public class CrearCliente extends javax.swing.JFrame {
         });
         jPanel1.add(setTextCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 170, -1));
 
+        setTextUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setTextUserActionPerformed(evt);
+            }
+        });
         setTextUser.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 setTextUserKeyReleased(evt);
@@ -420,7 +427,7 @@ public class CrearCliente extends javax.swing.JFrame {
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Ciudad:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 50, -1));
 
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Telefono:");
@@ -468,6 +475,8 @@ public class CrearCliente extends javax.swing.JFrame {
         jPanel1.add(btnFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 530, 80, 30));
 
         btnCancelar.setText("Cancelar");
+        btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnCancelar.setDefaultCapable(false);
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
@@ -477,6 +486,9 @@ public class CrearCliente extends javax.swing.JFrame {
 
         getTxtPadreCargo.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(getTxtPadreCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 130, 30));
+
+        txterrUser1.setForeground(new java.awt.Color(153, 0, 0));
+        jPanel1.add(txterrUser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 210, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -590,6 +602,10 @@ public class CrearCliente extends javax.swing.JFrame {
         limpiar();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    private void setTextUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setTextUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_setTextUserActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -659,5 +675,6 @@ public class CrearCliente extends javax.swing.JFrame {
     private javax.swing.JTextField setTxtHijoCargo;
     private javax.swing.JLabel txterrHijo;
     private javax.swing.JLabel txterrUser;
+    private javax.swing.JLabel txterrUser1;
     // End of variables declaration//GEN-END:variables
 }

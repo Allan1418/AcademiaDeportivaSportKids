@@ -166,7 +166,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditarClienteActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        AgregarFactura.arranque();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     public static void Arranque() {
