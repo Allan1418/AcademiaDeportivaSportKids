@@ -70,15 +70,14 @@ public class Deportista extends Usuario{
     
 
     //Constructores
-    public Deportista(Usuario actual, String ciudad, String direccion, String telefono, String correo) {
+    public Deportista(Usuario actual, String ciudad, String direccion, String telefono, String correo, String rutina) {
         super(actual.getId(), actual.getNombre(), actual.getUser(), actual.getPassword(), actual.getEstado());
         this.ciudad = ciudad;
         this.direccion = direccion;
         this.telefono = telefono;
         this.correo = correo;
-        
         this.padreACargo = "";
-        this.Rutina = "";
+        this.Rutina = rutina;
     }
     
     

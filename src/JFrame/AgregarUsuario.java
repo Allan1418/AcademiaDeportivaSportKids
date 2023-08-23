@@ -1,17 +1,14 @@
 package JFrame;
 
 
-import acaddeportsportkids.AcadDeportSportKids;
-import acaddeportsportkids.Comun;
-import acaddeportsportkids.Usuario;
+import acaddeportsportkids.*;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 public class AgregarUsuario extends javax.swing.JFrame {
     
-    private static final char[] arrayVacio = {};
-    
-    
+    private static final char[] ARRAY_VACIO = {};
+
 
     public AgregarUsuario() {
         initComponents();
@@ -55,7 +52,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
     
     public void comprVacio(){
         if (!txtId.getText().equals("") && !txtNombre.getText().equals("") && !txtUser.getText().equals("")
-                && !Arrays.equals(txtPassword.getPassword(), arrayVacio) && !Arrays.equals(txtConfPss.getPassword(), arrayVacio)) {
+                && !Arrays.equals(txtPassword.getPassword(), ARRAY_VACIO) && !Arrays.equals(txtConfPss.getPassword(), ARRAY_VACIO)) {
             btnAgregar.setEnabled(true);
         } else {
             btnAgregar.setEnabled(false);
@@ -86,9 +83,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         btnAgregar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -99,7 +94,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("ID");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, -1, -1));
 
         txtId.setBackground(new java.awt.Color(0, 0, 0));
         txtId.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -117,14 +112,14 @@ public class AgregarUsuario extends javax.swing.JFrame {
                 txtIdKeyReleased(evt);
             }
         });
-        jPanel2.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 280, 40));
+        jPanel2.add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 280, 40));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 204));
         jLabel3.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Nombre");
         jLabel3.setOpaque(true);
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 410, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, -1, -1));
 
         txtNombre.setBackground(new java.awt.Color(0, 0, 0));
         txtNombre.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -142,17 +137,17 @@ public class AgregarUsuario extends javax.swing.JFrame {
                 txtNombreKeyReleased(evt);
             }
         });
-        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, 280, 40));
+        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 280, 40));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesAgregar/Sign Up.png"))); // NOI18N
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 850, 90, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 650, 90, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 204));
         jLabel4.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Confirm");
         jLabel4.setOpaque(true);
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 700, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 540, -1, -1));
 
         txtConfPss.setBackground(new java.awt.Color(0, 0, 0));
         txtConfPss.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -170,14 +165,14 @@ public class AgregarUsuario extends javax.swing.JFrame {
                 txtConfPssKeyReleased(evt);
             }
         });
-        jPanel2.add(txtConfPss, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 730, 280, 40));
+        jPanel2.add(txtConfPss, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 570, 280, 40));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 204));
         jLabel5.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Password");
         jLabel5.setOpaque(true);
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 600, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, -1, -1));
 
         txtPassword.setBackground(new java.awt.Color(0, 0, 0));
         txtPassword.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -195,14 +190,14 @@ public class AgregarUsuario extends javax.swing.JFrame {
                 txtPasswordKeyReleased(evt);
             }
         });
-        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 640, 280, 40));
+        jPanel2.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, 280, 40));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 204));
         jLabel6.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Usuario");
         jLabel6.setOpaque(true);
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 510, 50, -1));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 50, -1));
 
         txtUser.setBackground(new java.awt.Color(0, 0, 0));
         txtUser.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
@@ -220,7 +215,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
                 txtUserKeyReleased(evt);
             }
         });
-        jPanel2.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 540, 280, 40));
+        jPanel2.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, 280, 40));
 
         btnAgregar.setBackground(new java.awt.Color(0, 0, 0));
         btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
@@ -231,7 +226,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
                 btnAgregarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 840, 230, 40));
+        jPanel2.add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 640, 230, 40));
 
         btnSalir.setBackground(new java.awt.Color(255, 255, 204));
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesAgregar/Arrow 1.png"))); // NOI18N
@@ -240,28 +235,15 @@ public class AgregarUsuario extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 40));
+        jPanel2.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 100, 40));
 
         jLabel7.setFont(new java.awt.Font("Matura MT Script Capitals", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(153, 153, 153));
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesAgregar/FondoDerecha.png"))); // NOI18N
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 0, 690, 960));
-
-        jButton1.setBackground(new java.awt.Color(255, 255, 204));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesAgregar/Register New Account.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 910, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 0, 530, 880));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesAgregar/Bienvenido a  acaddePortsportkids.png"))); // NOI18N
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, -1));
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesAgregar/Welcome.png"))); // NOI18N
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -271,9 +253,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 955, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 697, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -327,10 +307,6 @@ public class AgregarUsuario extends javax.swing.JFrame {
         comprVacio();
     }//GEN-LAST:event_txtConfPssKeyReleased
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ConsultarUsuario.arranque();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     
     public static void arranque() {
         
@@ -364,9 +340,7 @@ public class AgregarUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

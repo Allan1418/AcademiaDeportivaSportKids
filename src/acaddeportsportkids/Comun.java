@@ -27,6 +27,42 @@ public class Comun {
         
     }
     
+    public static void cargarArray() {
+        
+        Object actual = null;
+        ObjectInputStream arch = null;
+        
+        if (!new File(AcadDeportSportKids.ARCH_USUARIOS).exists()) {
+            return;
+        }
+
+        try {
+            arch = new ObjectInputStream(new FileInputStream(AcadDeportSportKids.ARCH_USUARIOS));
+            
+            while (true) {
+                AcadDeportSportKids.listUsuarios.add((Usuario) arch.readObject());
+                
+            }
+            
+            
+        } catch (EOFException ex12) {
+        } catch (FileNotFoundException ex13) {
+            JOptionPane.showMessageDialog(null, "¡No se encontró el archivo!", "Error ex13", JOptionPane.ERROR_MESSAGE);
+        } catch (IOException ex14) {
+            JOptionPane.showMessageDialog(null, "hubo un error con el archivo!", "Error ex14", JOptionPane.ERROR_MESSAGE);
+        } catch (ClassNotFoundException ex15) {
+            JOptionPane.showMessageDialog(null, "hubo un error con el archivo!", "Error ex15", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                arch.close();
+            } catch (IOException ex16) {
+                JOptionPane.showMessageDialog(null, "hubo un error con el archivo!", "Error ex16", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+        
+    }
+    
     public static void agregarArch(Object actual, String nombreArch){
         try {
             ObjectOutputStream arch;
@@ -175,13 +211,6 @@ public class Comun {
         
     }
     
-    public static boolean regexConfirm(String regex, String txt, String err) {
-        if (txt.matches(regex)) {
-            return true;
-        } else {
-            JOptionPane.showMessageDialog(null, err, "Academia Deportiva Sport Kids", 0);
-            return false;
-        }
-    }
+    
     
 }

@@ -1,7 +1,7 @@
 
 package acaddeportsportkids;
 
-import java.util.ArrayList;
+
 import javax.swing.DefaultListModel;
 
 
@@ -9,8 +9,8 @@ public class PadreFamilia extends Deportista{
     
     //Atributos
     //private ArrayList<String> hijos;
-    private DefaultListModel<String> hijos = new DefaultListModel<>();
-    private DefaultListModel<String> facturas = new DefaultListModel<>();
+    private DefaultListModel<String> hijos;
+    private DefaultListModel<String> facturas;
     
     
     //Metodos get y set
@@ -52,9 +52,10 @@ public class PadreFamilia extends Deportista{
     public void setRutina(String Rutina) {}
     
     //Constructores
-    public PadreFamilia(Usuario actual, String ciudad, String direccion, String telefono, String correo, DefaultListModel<String> hijos) {
-        super(actual, ciudad, direccion, telefono, correo);
+    public PadreFamilia(Usuario actual, String ciudad, String direccion, String telefono, String correo, DefaultListModel<String> hijos, DefaultListModel<String> facturas) {
+        super(actual, ciudad, direccion, telefono, correo, null);
         this.hijos = hijos;
+        this.facturas = facturas;
     }
     
     

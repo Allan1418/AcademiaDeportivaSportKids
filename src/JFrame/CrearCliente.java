@@ -3,11 +3,8 @@ package JFrame;
 
 import acaddeportsportkids.*;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-
-
 
 
 public class CrearCliente extends javax.swing.JFrame {
@@ -17,6 +14,9 @@ public class CrearCliente extends javax.swing.JFrame {
     private int tipoCliente = 0;
     
     DefaultListModel<String> modelo = new DefaultListModel<>();
+    DefaultListModel<String> modeloFacturas = new DefaultListModel<>();
+    
+    private String actualRutina = "";
     
     public CrearCliente() {
         initComponents();
@@ -43,7 +43,7 @@ public class CrearCliente extends javax.swing.JFrame {
         }
 
         if (tipoCliente == 1) {
-            Deportista depor = new Deportista(actualUsuario, cid, direc, tel, mail);
+            Deportista depor = new Deportista(actualUsuario, cid, direc, tel, mail, actualRutina);
             Comun.reempObjctArch(depor, AcadDeportSportKids.ARCH_USUARIOS);
             Comun.reempUsuarioArray(depor);
             JOptionPane.showMessageDialog(null,"Nuevo Deportista creado con exito!","Nuevo Cliente!", JOptionPane.INFORMATION_MESSAGE);
@@ -56,7 +56,7 @@ public class CrearCliente extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"Por Favor seleccione al menos un Hijo a cargo!","Error!", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            PadreFamilia padre = new PadreFamilia(actualUsuario, cid, direc, tel, direc, modelo);
+            PadreFamilia padre = new PadreFamilia(actualUsuario, cid, direc, tel, direc, modelo, modeloFacturas);
             Comun.reempObjctArch(padre, AcadDeportSportKids.ARCH_USUARIOS);
             Comun.reempUsuarioArray(padre);
             
@@ -145,14 +145,17 @@ public class CrearCliente extends javax.swing.JFrame {
         SetTextTel.setText(actualModificar.getTelefono());
         SetTextmail.setText(actualModificar.getCorreo());
         
-        if (actualModificar instanceof PadreFamilia) {
+        if (actualModificar instanceof PadreFamilia padre) {
             listaHijosDisplay.setEnabled(true);
             modelo = ((PadreFamilia) actualModificar).getHijos();
-            listaHijosDisplay.setModel(modelo);
+            modeloFacturas = padre.getFacturas();
         } else{
             getTxtPadreCargo.setText("Padre a cargo: " + actualModificar.getPadreACargo());
+            modelo = new DefaultListModel<>();
+            modelo.add(0, ((Deportista) actualModificar).getRutina());
         }
         
+        listaHijosDisplay.setModel(modelo);
         
     }
     
@@ -165,11 +168,12 @@ public class CrearCliente extends javax.swing.JFrame {
         SetTextDirec.setEditable(true);
         SetTextTel.setEditable(true);
         SetTextmail.setEditable(true);
+        setTxtHijoCargo.setEnabled(true);
+        
+        btnAgregarHijo.setEnabled(true);
+        btnQuitarHijo.setEnabled(true);
         
         if (actualModificar instanceof PadreFamilia) {
-            setTxtHijoCargo.setEnabled(true);
-            btnAgregarHijo.setEnabled(true);
-            btnQuitarHijo.setEnabled(true);
             tipoCliente = 2;
         } else{
             tipoCliente = 1;
@@ -221,6 +225,24 @@ public class CrearCliente extends javax.swing.JFrame {
         
     }
     
+    public void agregarRutina(){
+        
+        Object preRutina = Comun.consultarArch(setTxtHijoCargo.getText(), AcadDeportSportKids.ARCH_DEPORU);
+        
+        if ((preRutina == null) && !(preRutina instanceof Rutina)) {
+            txterrHijo.setText("No existe la rutina!");
+            return;
+        }
+        
+        actualRutina = ((Rutina) preRutina).getNombre();
+        modelo.add(0, actualRutina);
+        btnAgregarHijo.setEnabled(false);
+        setTxtHijoCargo.setText("");
+        setTxtHijoCargo.setEditable(false);
+        
+        
+    }
+    
     public void limpiar(){
         
         btnUser.setEnabled(true);
@@ -253,13 +275,16 @@ public class CrearCliente extends javax.swing.JFrame {
     
     public void limpiarHijos(){
         setTxtHijoCargo.setText("");
+        
         setTxtHijoCargo.setEnabled(false);
         btnAgregarHijo.setEnabled(false);
         btnQuitarHijo.setEnabled(false);
         
         listaHijosDisplay.setEnabled(false);
+        setTxtHijoCargo.setEditable(true);
         modelo = new DefaultListModel<>();
         listaHijosDisplay.setModel(modelo);
+        actualRutina = "";
         
         
     }
@@ -527,11 +552,18 @@ public class CrearCliente extends javax.swing.JFrame {
         if (index != -1) {
             modelo.remove(index);
         }
+        
+        btnAgregarHijo.setEnabled(true);
+        setTxtHijoCargo.setEditable(true);
     }//GEN-LAST:event_btnQuitarHijoActionPerformed
     
     private void btnAgregarHijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarHijoActionPerformed
 
-        agregarHijo();
+        if (tipoCliente == 2) {
+                agregarHijo();
+            }else{
+                agregarRutina();
+            }
         
     }//GEN-LAST:event_btnAgregarHijoActionPerformed
 
@@ -551,6 +583,8 @@ public class CrearCliente extends javax.swing.JFrame {
         btnDeportista.setSelected(false);
         tipoCliente = 2;
         
+        limpiarHijos();
+        
         setTxtHijoCargo.setEnabled(true);
         btnAgregarHijo.setEnabled(true);
         btnQuitarHijo.setEnabled(true);
@@ -568,6 +602,15 @@ public class CrearCliente extends javax.swing.JFrame {
         
         limpiarHijos();
         
+        setTxtHijoCargo.setEnabled(true);
+        btnAgregarHijo.setEnabled(true);
+        btnQuitarHijo.setEnabled(true);
+        listaHijosDisplay.setEnabled(true);
+        
+        listaHijosDisplay.setModel(modelo);
+        
+        
+        
         
     }//GEN-LAST:event_btnDeportistaActionPerformed
 
@@ -575,7 +618,11 @@ public class CrearCliente extends javax.swing.JFrame {
         
         txterrHijo.setText("");
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            agregarHijo();
+            if (tipoCliente == 2) {
+                agregarHijo();
+            }else{
+                agregarRutina();
+            }
         }
         
     }//GEN-LAST:event_setTxtHijoCargoKeyReleased

@@ -90,7 +90,7 @@ public class ConsultarUsuario extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Usuario por buscar");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 376, -1, 20));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, -1, 20));
 
         setTxtUsuario.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         setTxtUsuario.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,48 +105,48 @@ public class ConsultarUsuario extends javax.swing.JFrame {
                 setTxtUsuarioKeyReleased(evt);
             }
         });
-        jPanel1.add(setTxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 220, 40));
+        jPanel1.add(setTxtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 220, 40));
 
         txtErrorUser.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         txtErrorUser.setForeground(new java.awt.Color(255, 0, 0));
         txtErrorUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(txtErrorUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 440, 200, 24));
+        jPanel1.add(txtErrorUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 200, 24));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("ID del usuario");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 610, 110, 30));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, 110, 30));
 
         getTxtUser.setBackground(new java.awt.Color(255, 255, 255));
         getTxtUser.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         getTxtUser.setForeground(new java.awt.Color(255, 255, 255));
         getTxtUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(getTxtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 610, 270, 30));
+        jPanel1.add(getTxtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, 270, 30));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Nombre");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 510, -1, 30));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 390, -1, 30));
 
         getTxtNombre.setBackground(new java.awt.Color(255, 255, 255));
         getTxtNombre.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         getTxtNombre.setForeground(new java.awt.Color(255, 255, 255));
         getTxtNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(getTxtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 510, 270, 30));
+        jPanel1.add(getTxtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, 270, 30));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Estado del Usuario");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 690, 123, 40));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 570, 123, 40));
 
         getTxtEstado.setBackground(new java.awt.Color(255, 255, 255));
         getTxtEstado.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         getTxtEstado.setForeground(new java.awt.Color(255, 255, 255));
         getTxtEstado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel1.add(getTxtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 700, 100, 30));
+        jPanel1.add(getTxtEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 580, 100, 30));
 
         btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/Frame 4178.png"))); // NOI18N
         btnConsultar.addActionListener(new java.awt.event.ActionListener() {
@@ -154,7 +154,7 @@ public class ConsultarUsuario extends javax.swing.JFrame {
                 btnConsultarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 540, 250, 50));
+        jPanel1.add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 420, 250, 50));
 
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/Frame 4205.png"))); // NOI18N
         btnSalir.setText("SALIR");
@@ -163,7 +163,7 @@ public class ConsultarUsuario extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 640, 250, 50));
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 520, 250, 50));
 
         btnEstado.setBackground(new java.awt.Color(0, 102, 0));
         btnEstado.setForeground(new java.awt.Color(255, 255, 255));
@@ -173,13 +173,13 @@ public class ConsultarUsuario extends javax.swing.JFrame {
                 btnEstadoActionPerformed(evt);
             }
         });
-        jPanel1.add(btnEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 750, 150, 40));
+        jPanel1.add(btnEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 630, 150, 40));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/En este apartado se procederá a ingresar el Usuario por consultar para conseguir la información de dicho usuario.png"))); // NOI18N
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, -1, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/Consultar Usuario.png"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, 30));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, 30));
 
         jButton1.setBackground(new java.awt.Color(51, 51, 51));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/create an account Enter here.png"))); // NOI18N
@@ -188,22 +188,22 @@ public class ConsultarUsuario extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 860, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 740, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/User_01.png"))); // NOI18N
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 500, -1, 30));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, -1, 30));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/Label.png"))); // NOI18N
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 694, -1, 30));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 580, -1, 30));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/User_01.png"))); // NOI18N
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, -1, -1));
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/Vector.png"))); // NOI18N
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 600, 30, 30));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 30, 30));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenesConsultar/Rectangle 1573.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 1010, 760));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 1010, 760));
 
         jLabel1.setFont(new java.awt.Font("Segoe Script", 3, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -212,21 +212,17 @@ public class ConsultarUsuario extends javax.swing.JFrame {
         jLabel1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel1.setVerifyInputWhenFocusTarget(false);
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 840));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

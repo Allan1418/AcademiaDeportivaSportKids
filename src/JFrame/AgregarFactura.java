@@ -1,20 +1,8 @@
 package JFrame;
 
-import acaddeportsportkids.AcadDeportSportKids;
-import acaddeportsportkids.Comun;
-import static acaddeportsportkids.Comun.consultarArch;
-import acaddeportsportkids.Deporte;
-import acaddeportsportkids.Deportista;
-import acaddeportsportkids.Factura;
-import acaddeportsportkids.PadreFamilia;
-import acaddeportsportkids.Rutina;
-import acaddeportsportkids.Usuario;
+import acaddeportsportkids.*;
 import java.awt.event.KeyEvent;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
@@ -24,16 +12,13 @@ import javax.swing.JOptionPane;
  */
 public class AgregarFactura extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AgregarFactura
-     */
+    
     
     DefaultListModel<String> modelo = new DefaultListModel<>();
     DefaultListModel<String> modeloFacturas = new DefaultListModel<>();
 
     private Usuario actualUsuario;
     private Factura actualFactura;
-    private int tipoCliente = 0;
     final static double COSTOBASE = 10000;
     private String fechacomp;
 
@@ -43,6 +28,7 @@ public class AgregarFactura extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         btnCancelar.setVisible(false);
         btnMostrarDatos.setVisible(false);
+        setTextUser.requestFocus();
 
     }
 
@@ -58,50 +44,47 @@ public class AgregarFactura extends javax.swing.JFrame {
 
         double total = 0;
 
-        if (tipoCliente == 0) {
-            getTxtId.setText(actualUsuario.getId());
-            getTxtNombre.setText(actualUsuario.getNombre());
-            codigoFactura = actualUsuario.getUser() + "_" + mes;
-            setTxtCodigo.setText(codigoFactura);
-            total = COSTOBASE * modelo.size();
-            setTextMonto.setText(String.valueOf((total)));
-            for (int i = 0; i < modeloFacturas.size(); i++) {
-                if (modeloFacturas.get(i).equals(codigoFactura)) {
-                    JOptionPane.showMessageDialog(null, "Ya hay una factura para este mes!", "Factura Cancelada!", JOptionPane.ERROR_MESSAGE);
-                    limpiar();
-                    return;
-                }
+        getTxtId.setText(actualUsuario.getId());
+        getTxtNombre.setText(actualUsuario.getNombre());
+        codigoFactura = actualUsuario.getUser() + "_" + mes;
+        setTxtCodigo.setText(codigoFactura);
+        total = COSTOBASE * modelo.size();
+        setTextMonto.setText(String.valueOf((total)));
+        for (int i = 0; i < modeloFacturas.size(); i++) {
+            if (modeloFacturas.get(i).equals(codigoFactura)) {
+                JOptionPane.showMessageDialog(null, "Ya hay una factura para este mes!", "Factura Cancelada!", JOptionPane.ERROR_MESSAGE);
+                return;
             }
-
-            String descripcion = "<html><body>";
-
-            for (int i = 0; i < modelo.size(); i++) {
-                descripcion += modelo.get(i);
-                descripcion += "-";
-                descripcion += ((Deportista) consultarArch(modelo.get(i), AcadDeportSportKids.ARCH_USUARIOS)).getRutina();
-                descripcion += "<br>";
-            }
-
-            descripcion += "</body></html>";
-
-            Factura fac = new Factura(codigoFactura, fechacomp, total, descripcion);
-            Comun.agregarArch(fac, AcadDeportSportKids.ARCH_FACTURA);
-
-            PadreFamilia cambio = (PadreFamilia) Comun.consultarArch(actualUsuario.getUser(), AcadDeportSportKids.ARCH_USUARIOS);
-            cambio.getFacturas().add(0, codigoFactura);
-            Comun.reempObjctArch(cambio, AcadDeportSportKids.ARCH_USUARIOS);
-
-            JOptionPane.showMessageDialog(null, "Factura Creada correctamente!", "Nueva Factura!", JOptionPane.INFORMATION_MESSAGE);
-
-            limpiar();
-        } else {
-            JOptionPane.showMessageDialog(null, "No se pudo agregar la factura cierre y vuelva a abrir!", "Factura no creada!", JOptionPane.INFORMATION_MESSAGE);
-            limpiar();
-            return;
         }
+
+        String descripcion = "<html><body>";
+
+        for (int i = 0; i < modelo.size(); i++) {
+            descripcion += modelo.get(i);
+            descripcion += "-";
+            descripcion += ((Deportista) Comun.consultarArch(modelo.get(i), AcadDeportSportKids.ARCH_USUARIOS)).getRutina();
+            descripcion += "<br>";
+        }
+
+        descripcion += "</body></html>";
+
+        Factura fac = new Factura(codigoFactura, fechacomp, total, descripcion);
+        Comun.agregarArch(fac, AcadDeportSportKids.ARCH_FACTURA);
+
+        PadreFamilia cambio = (PadreFamilia) Comun.consultarArch(actualUsuario.getUser(), AcadDeportSportKids.ARCH_USUARIOS);
+        cambio.getFacturas().add(0, codigoFactura);
+        Comun.reempObjctArch(cambio, AcadDeportSportKids.ARCH_USUARIOS);
+
+        JOptionPane.showMessageDialog(null, "Factura Creada correctamente!", "Nueva Factura!", JOptionPane.INFORMATION_MESSAGE);
+
+        prepararFactura();
+        
+        
     }
 
     public void prepararFactura() {
+        
+        limpiar();
 
         btnUser.setEnabled(false);
         Object preUsuario = Comun.consultarArch(setTextUser.getText(), AcadDeportSportKids.ARCH_USUARIOS);
@@ -111,15 +94,15 @@ public class AgregarFactura extends javax.swing.JFrame {
             return;
         }
         actualUsuario = (Usuario) preUsuario;
-        txterrUser.setText("El usuario no esta registrado como cliente");
+        txterrUser.setText("No es cliente!");
 
         if (!actualUsuario.getEstado()) {
-            txterrUser.setText("El usuario esta inactivo");
+            txterrUser.setText("El usuario esta inactivo!");
             return;
         }
 
         if (actualUsuario instanceof Deportista) {
-            txterrUser.setText("El cliente no puede ser un deportista");
+            txterrUser.setText("El cliente es deportista!");
 
             if (actualUsuario instanceof PadreFamilia) {
 
@@ -234,11 +217,6 @@ public class AgregarFactura extends javax.swing.JFrame {
         getTxtId.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(getTxtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 170, 20));
 
-        setTextUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                setTextUserActionPerformed(evt);
-            }
-        });
         setTextUser.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 setTextUserKeyReleased(evt);
@@ -349,13 +327,8 @@ public class AgregarFactura extends javax.swing.JFrame {
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             prepararFactura();
         }
-        btnFinal.setEnabled(false);
 
     }//GEN-LAST:event_setTextUserKeyReleased
-
-    private void setTextUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setTextUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_setTextUserActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         limpiar();
@@ -370,8 +343,6 @@ public class AgregarFactura extends javax.swing.JFrame {
             default:
                 break;
         }
-
-        tipoCliente = 1;
     }//GEN-LAST:event_btnFinalActionPerformed
 
     private void btnMostrarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarDatosActionPerformed
